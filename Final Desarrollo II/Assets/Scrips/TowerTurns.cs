@@ -5,13 +5,19 @@ using UnityEngine;
 public class TowerTurns : MonoBehaviour
 {
     [SerializeField] float duration;
+    [SerializeField] Transform initialPositionShooting;
+    [SerializeField] GameObject bulletPrefab;
+
     Coroutine turnTower;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(TurnTower());
+            if (turnTower == null)
+            {
+                turnTower = StartCoroutine(TurnTower());
+            }
         }
 
 
@@ -20,7 +26,7 @@ public class TowerTurns : MonoBehaviour
 
     void Shoot()
     {
-
+        Instantiate(bulletPrefab, initialPositionShooting.position, transform.rotation);
     }
 
     IEnumerator TurnTower()
@@ -49,6 +55,7 @@ public class TowerTurns : MonoBehaviour
         }
 
         transform.rotation = newRotation;
+        turnTower = null;
         Shoot();
     }
 }
