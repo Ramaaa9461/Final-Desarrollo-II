@@ -18,7 +18,12 @@ public class bulletBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Choco");
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            //Intancias particulas
+            Destroy(collision.gameObject);
+        }
+
         Destroy(gameObject);
     }
 }
