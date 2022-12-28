@@ -9,6 +9,12 @@ public class TowerTurns : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
 
     Coroutine turnTower;
+    Camera cam;
+
+    private void Awake()
+    {
+        cam = Camera.main;
+    }
 
     void Update()
     {
@@ -42,6 +48,14 @@ public class TowerTurns : MonoBehaviour
 
         Quaternion initialRotation = transform.rotation;
         Quaternion newRotation = Quaternion.Euler(new Vector3(0, -angle, 0)) * transform.parent.transform.rotation;
+      
+        
+        newRotation = cam.transform.rotation;
+        newRotation.x = 0;
+        newRotation.z = 0;
+
+
+
 
         while (timer <= duration)
         {
