@@ -5,6 +5,8 @@ using UnityEngine;
 public class bulletBehaviour : MonoBehaviour
 {
   [SerializeField] float velocity;
+
+
     void Update()
     {
         transform.position += transform.forward * velocity * Time.deltaTime;

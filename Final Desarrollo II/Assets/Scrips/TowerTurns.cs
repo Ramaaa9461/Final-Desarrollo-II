@@ -41,7 +41,7 @@ public class TowerTurns : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90.0f;
 
         Quaternion initialRotation = transform.rotation;
-        Quaternion newRotation = Quaternion.Euler(new Vector3(0, -angle, 0));
+        Quaternion newRotation = Quaternion.Euler(new Vector3(0, -angle, 0)) * transform.parent.transform.rotation;
 
         while (timer <= duration)
         {
