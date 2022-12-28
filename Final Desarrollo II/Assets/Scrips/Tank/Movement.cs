@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
         
         if (Input.GetKey(KeyCode.W))
         {
-            RB.AddForce(transform.forward * velocityY);
+            RB.AddForce(transform.forward * velocityY, ForceMode.Force);
         }
 
         if (Input.GetKey(KeyCode.S))
