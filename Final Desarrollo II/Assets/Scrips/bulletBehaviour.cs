@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class bulletBehaviour : MonoBehaviour
 {
-    [SerializeField] float velocity;
-    Rigidbody RB;
+  [SerializeField] float velocity;
 
-    private void Awake()
-    {
-        RB = transform.GetComponent<Rigidbody>();
-    }
 
-    private void Start()
+    void Update()
     {
-        Destroy(gameObject, 5.0f);
-    }
-    void FixedUpdate()
-    {
-        // transform.position += transform.forward * velocity * Time.deltaTime;
-        // RB.AddForce(transform.forward * velocity * Time.deltaTime, ForceMode.Impulse);
-        RB.MovePosition(transform.position + transform.forward * velocity * Time.deltaTime);
+        transform.position += transform.forward * velocity * Time.deltaTime;
     }
 
     private void OnCollisionEnter(Collision collision)
