@@ -8,7 +8,7 @@ public class JumpingMovement : MonoBehaviour, MovementType
 
 
     float distToGround;
-    float velocity = 20;
+    float velocity = 5;
     void Awake()
     {
         RB = gameObject.GetComponent<Rigidbody>();

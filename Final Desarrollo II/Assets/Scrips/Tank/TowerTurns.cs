@@ -39,23 +39,10 @@ public class TowerTurns : MonoBehaviour
     {
         float timer = 0;
 
-        Vector3 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
-        Vector3 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
-
-        Vector3 direction = mouseOnScreen - positionOnScreen;
-
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90.0f;
-
         Quaternion initialRotation = transform.rotation;
-        Quaternion newRotation = Quaternion.Euler(new Vector3(0, -angle, 0)) * transform.parent.transform.rotation;
-      
-        
-        newRotation = cam.transform.rotation;
+        Quaternion newRotation = cam.transform.rotation;
         newRotation.x = 0;
         newRotation.z = 0;
-
-
-
 
         while (timer <= duration)
         {
