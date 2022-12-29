@@ -28,7 +28,6 @@ public class CameraOrbit : MonoBehaviour
 	void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        
 
         CalculateNearPlaneSize();
     }

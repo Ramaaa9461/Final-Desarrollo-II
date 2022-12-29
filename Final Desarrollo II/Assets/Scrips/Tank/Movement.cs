@@ -31,11 +31,15 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.eulerAngles += Vector3.down * velocityX * Time.deltaTime;
+           
+            // RB.MoveRotation(transform.rotation * Quaternion.Euler(Vector3.down * velocityX));
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             transform.eulerAngles += Vector3.up * velocityX * Time.deltaTime;
+            
+            // RB.MoveRotation(transform.rotation * Quaternion.Euler(Vector3.up * velocityX));
         }
 
     }

@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class JumpingMovement : MonoBehaviour, MovementType
 {
+    [SerializeField] SphereConfiguration sphereConfiguration;
     Rigidbody RB;
-
 
     float distToGround;
     float velocity = 5;
+
     void Awake()
     {
         RB = gameObject.GetComponent<Rigidbody>();
     }
+
     private void Start()
     {
         distToGround = gameObject.GetComponentInChildren<Collider>().bounds.extents.y;
+        velocity = sphereConfiguration.jumpForce;
     }
+
     bool IsGrounded()
     {
         Debug.DrawRay(transform.position, -Vector3.up,Color.yellow , distToGround + 0.1f);

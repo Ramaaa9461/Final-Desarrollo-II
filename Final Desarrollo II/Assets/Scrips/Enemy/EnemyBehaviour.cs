@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-
     private MovementType movementType;
+
     void Awake()
     {
         if (Random.Range(0, 2) == 0)
