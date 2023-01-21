@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class bulletBehaviour : MonoBehaviour
 {
-  [SerializeField] float velocity;
+    [SerializeField] float velocity;
+   public UnityEvent enemyEliminated;
 
     private void Start()
     {
+        enemyEliminated.AddListener(GameObject.FindObjectOfType<DeadEnemiesAccountant>().addToDeadEnemiesAccountant);
         Destroy(gameObject, 5.0f);
     }
 
@@ -22,6 +25,7 @@ public class bulletBehaviour : MonoBehaviour
         {
             //Intancias particulas
             Destroy(collision.gameObject);
+            enemyEliminated.Invoke();
         }
 
         Destroy(gameObject);
