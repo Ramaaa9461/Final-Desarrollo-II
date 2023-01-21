@@ -4,9 +4,10 @@ using UnityEngine;
 public class CameraOrbit : MonoBehaviour
 {
     [Header("Setting values")]
-    [SerializeField] float currentDistance = 10.0f;
+    [SerializeField] float currentDistance = 15.0f;
     [SerializeField] float minDistance = 4.0f;
     [SerializeField] float maxDistance = 25.0f;
+    [SerializeField] float angleY = 0;
     [Space(10)]
     [SerializeField] Vector2 sensitivity = new Vector2(200.0f, 200.0f);
 
@@ -30,24 +31,20 @@ public class CameraOrbit : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         CalculateNearPlaneSize();
+
     }
 
     void Update()
     {
         float hor = Input.GetAxis("Mouse X");
-        float ver = Input.GetAxis("Mouse Y");
-
 
         if (hor != 0)
         {
             angle.x += hor * Mathf.Deg2Rad * sensitivity.x * Time.deltaTime;
         }
+            angle.y = angleY;
 
-        if (ver != 0)
-        {
-            angle.y += ver * Mathf.Deg2Rad * sensitivity.y * Time.deltaTime;
-            angle.y = Mathf.Clamp(angle.y, -80 * Mathf.Deg2Rad, 80 * Mathf.Deg2Rad);
-        }
+       
 
         HandleCameraZoom();
     }
@@ -69,14 +66,11 @@ public class CameraOrbit : MonoBehaviour
             if (Physics.Raycast(point, direction, out hit, currentDistance, cameraCollisionLayer))
             {
                 distance = Mathf.Min((hit.point - follow.position).magnitude, distance);
-                //distance = Mathf.Clamp(distance, minDistance, maxDistance);
             }
             Debug.DrawLine(point, transform.position, Color.white);
         }
 
-
         transform.position = follow.position + direction * distance;
-        //  transform.position = Vector3.Lerp(transform.position, follow.position + direction * distance, .9f);
 
         transform.rotation = Quaternion.LookRotation(follow.position - transform.position);
     }
