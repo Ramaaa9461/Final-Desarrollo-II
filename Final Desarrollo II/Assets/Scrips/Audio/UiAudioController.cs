@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class UiAudioController : MonoBehaviour
 {
@@ -12,13 +12,13 @@ public class UiAudioController : MonoBehaviour
     [SerializeField] Slider sfxSlider;
     [SerializeField] Toggle muteToggle;
 
-    //inicializar con el save and load
-
     private void Start()
     {
         musicSlider.value = saveAndLoadAudio.LoadMusicVolume();
         sfxSlider.value = saveAndLoadAudio.LoadSfxVolume();
-        muteToggle.value = saveAndLoadAudio.LoadIsMute();
+        muteToggle.isOn = saveAndLoadAudio.LoadIsMute();
+
+        MuteToggleController(muteToggle.isOn);
     }
 
     public void MusicSliderController(float volume)

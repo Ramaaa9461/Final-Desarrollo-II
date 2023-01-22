@@ -21,8 +21,10 @@ public class SaveAndLoadAudio : MonoBehaviour
 
     public void SaveIsMute(bool mute)
     {
-        PlayerPrefs.SetString(isMutePath, mute.ToString());
+        PlayerPrefs.SetInt(isMutePath, (mute ? 1 : 0));
     }
+
+
 
     public float LoadMusicVolume()
     {
@@ -36,6 +38,6 @@ public class SaveAndLoadAudio : MonoBehaviour
 
     public bool LoadIsMute()
     {
-        return PlayerPrefs.GetString(isMutePath).Contains('1'); //Nose si funcara
+        return (PlayerPrefs.GetInt(isMutePath) != 0);
     }
 }

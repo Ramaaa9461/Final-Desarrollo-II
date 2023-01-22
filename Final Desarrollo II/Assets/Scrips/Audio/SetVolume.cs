@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class SetVolume : MonoBehaviour
 {
-    List<AudioSource> musicList;
-    List<AudioSource> sfxList;
+    [SerializeField] List<AudioSource> musicList;
+    [SerializeField] List<AudioSource> sfxList;
 
+    SaveAndLoadAudio saveAndLoadAudio;
     private void Awake()
+    {
+        saveAndLoadAudio = gameObject.GetComponent<SaveAndLoadAudio>();
+    }
+
+    private void Start()
     {
         AudioSource[] audioSource;
 
@@ -26,6 +32,10 @@ public class SetVolume : MonoBehaviour
             }
         }
 
+
+        setMusicVolume(saveAndLoadAudio.LoadMusicVolume()); 
+        setSfxVolume  (saveAndLoadAudio.LoadSfxVolume());
+        setAllAudiosInMute(saveAndLoadAudio.LoadIsMute());
     }
 
     public void setMusicVolume(float volume)
@@ -48,13 +58,13 @@ public class SetVolume : MonoBehaviour
     {
         if (isMute)
         {
-            setMusicVolume(0);
-            setSfxVolume(0);
+            setMusicVolume(0.0f);
+            setSfxVolume(0.0f);
         }
         else
         {
-            setMusicVolume(1);
-            setSfxVolume(1);
+            setMusicVolume(1.0f);
+            setSfxVolume(1.0f);
         }
     }
 }
