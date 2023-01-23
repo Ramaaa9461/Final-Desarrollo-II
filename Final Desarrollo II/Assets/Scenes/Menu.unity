@@ -288,6 +288,9 @@ GameObject:
   - component: {fileID: 19806749}
   - component: {fileID: 19806748}
   - component: {fileID: 19806752}
+  - component: {fileID: 19806755}
+  - component: {fileID: 19806754}
+  - component: {fileID: 19806753}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -475,6 +478,49 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &19806753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19806747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e202f507b883746831c33278c2cc6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicList: []
+  sfxList: []
+--- !u!114 &19806754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19806747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e845f050f26b414682c05373fc81608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &19806755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19806747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f04486e20de81449f98ded1399afe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveAndLoadAudio: {fileID: 19806754}
+  setVolume: {fileID: 19806753}
+  musicSlider: {fileID: 1287783848}
+  sfxSlider: {fileID: 906025124}
+  muteToggle: {fileID: 1923268938}
 --- !u!1 &47235168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1593,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552776234}
+      - m_Target: {fileID: 19806755}
         m_TargetAssemblyTypeName: UiAudioController, Assembly-CSharp
         m_MethodName: SfxSliderController
         m_Mode: 0
@@ -1945,7 +1991,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552776234}
+      - m_Target: {fileID: 19806755}
         m_TargetAssemblyTypeName: UiAudioController, Assembly-CSharp
         m_MethodName: MusicSliderController
         m_Mode: 0
@@ -2284,9 +2330,6 @@ GameObject:
   - component: {fileID: 1552776231}
   - component: {fileID: 1552776230}
   - component: {fileID: 1552776229}
-  - component: {fileID: 1552776234}
-  - component: {fileID: 1552776233}
-  - component: {fileID: 1552776232}
   m_Layer: 5
   m_Name: PanelSettings
   m_TagString: Untagged
@@ -2358,49 +2401,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1552776232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552776228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e845f050f26b414682c05373fc81608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1552776233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552776228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e202f507b883746831c33278c2cc6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicList: []
-  sfxList: []
---- !u!114 &1552776234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552776228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f04486e20de81449f98ded1399afe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveAndLoadAudio: {fileID: 1552776232}
-  setVolume: {fileID: 1552776233}
-  musicSlider: {fileID: 1287783848}
-  sfxSlider: {fileID: 906025124}
-  muteToggle: {fileID: 1923268938}
 --- !u!1 &1582155321
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,6 +2488,18 @@ MonoBehaviour:
       - m_Target: {fileID: 19806752}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1826266176}
+        m_TargetAssemblyTypeName: MenuOptions, Assembly-CSharp
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2735,6 +2747,18 @@ MonoBehaviour:
       - m_Target: {fileID: 19806752}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1826266176}
+        m_TargetAssemblyTypeName: MenuOptions, Assembly-CSharp
+        m_MethodName: GoToGameplay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3007,6 +3031,7 @@ GameObject:
   - component: {fileID: 1826266175}
   - component: {fileID: 1826266174}
   - component: {fileID: 1826266173}
+  - component: {fileID: 1826266176}
   m_Layer: 5
   m_Name: PanelButtons
   m_TagString: Untagged
@@ -3076,7 +3101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3101,6 +3126,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826266171}
   m_CullTransparentMesh: 1
+--- !u!114 &1826266176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826266171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764a4a0963a43b7488fef2f540a21867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1918409330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,7 +3519,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1552776234}
+      - m_Target: {fileID: 19806755}
         m_TargetAssemblyTypeName: UiAudioController, Assembly-CSharp
         m_MethodName: MuteToggleController
         m_Mode: 0
