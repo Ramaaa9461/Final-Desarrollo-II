@@ -18,6 +18,8 @@ public class UiAudioController : MonoBehaviour
         sfxSlider.value = saveAndLoadAudio.LoadSfxVolume();
         muteToggle.isOn = saveAndLoadAudio.LoadIsMute();
 
+        MusicSliderController(musicSlider.value);
+        SfxSliderController(sfxSlider.value);
         MuteToggleController(muteToggle.isOn);
     }
 
