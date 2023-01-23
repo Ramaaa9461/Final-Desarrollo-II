@@ -29,8 +29,7 @@ public class SetVolume : MonoBehaviour
             }
         }
 
-
-        //setMusicVolume(saveAndLoadAudio.LoadMusicVolume()); 
+        //setMusicVolume(saveAndLoadAudio.LoadMusicVolume()); //Lo setea el UIController para evitar leer innesariamente datos del disco
         //setSfxVolume  (saveAndLoadAudio.LoadSfxVolume());
         //setAllAudiosInMute(saveAndLoadAudio.LoadIsMute());
     }
