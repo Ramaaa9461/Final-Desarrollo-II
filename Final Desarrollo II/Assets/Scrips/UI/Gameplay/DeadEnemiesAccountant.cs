@@ -19,4 +19,9 @@ public class DeadEnemiesAccountant : MonoBehaviour
         deadEnemiesAccountant++;
         enemiesCountText.text = "" + deadEnemiesAccountant.ToString();
     }
+
+    public void SaveDeadEnemiesAccountantValue()
+    {
+        PlayerPrefs.SetInt("EnemiesKilled", deadEnemiesAccountant);
+    }
 }
