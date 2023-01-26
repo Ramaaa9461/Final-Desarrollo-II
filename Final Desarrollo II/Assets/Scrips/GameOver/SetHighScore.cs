@@ -35,11 +35,11 @@ public class SetHighScore : MonoBehaviour
             }
         }
 
-        highScoreTable.score1 = array[0];
-        highScoreTable.score2 = array[1];
-        highScoreTable.score3 = array[2];
+        highScoreTable.score1 = array[3];
+        highScoreTable.score2 = array[2];
+        highScoreTable.score3 = array[1];
 
         saveAndLoadHighScore.setHighScoreTable(highScoreTable);
-        highScoreUIController.RecibeHighScoreValues(highScoreTable);
+        highScoreUIController.RecibeHighScoreValues(highScoreTable, lastScore);
     }
 }

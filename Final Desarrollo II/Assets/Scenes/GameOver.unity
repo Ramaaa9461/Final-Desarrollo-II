@@ -354,7 +354,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.15
+  m_fontSize: 41.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.15
+  m_fontSize: 41.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.15
+  m_fontSize: 41.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1139,9 +1139,6 @@ GameObject:
   - component: {fileID: 999463268}
   - component: {fileID: 999463267}
   - component: {fileID: 999463266}
-  - component: {fileID: 999463265}
-  - component: {fileID: 999463264}
-  - component: {fileID: 999463263}
   - component: {fileID: 999463262}
   m_Layer: 5
   m_Name: Canvas
@@ -1162,49 +1159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764a4a0963a43b7488fef2f540a21867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &999463263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999463261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e202f507b883746831c33278c2cc6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicList: []
-  sfxList: []
---- !u!114 &999463264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999463261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e845f050f26b414682c05373fc81608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &999463265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 999463261}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42f04486e20de81449f98ded1399afe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveAndLoadAudio: {fileID: 999463264}
-  setVolume: {fileID: 999463263}
-  musicSlider: {fileID: 0}
-  sfxSlider: {fileID: 0}
-  muteToggle: {fileID: 0}
 --- !u!82 &999463266
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1470,7 +1424,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.15
+  m_fontSize: 41.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1673,7 +1627,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.05
+  m_fontSize: 43
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1808,7 +1762,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.05
+  m_fontSize: 43
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1943,7 +1897,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 63.45
+  m_fontSize: 63.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2239,9 +2193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bb8f58c5cc9b04bb19fb6c2c241c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score1: {fileID: 0}
-  score2: {fileID: 0}
-  score3: {fileID: 0}
+  score1: {fileID: 244643971}
+  score2: {fileID: 1153125725}
+  score3: {fileID: 308575745}
+  lastScore: {fileID: 1456254831}
 --- !u!114 &2134184192
 MonoBehaviour:
   m_ObjectHideFlags: 0

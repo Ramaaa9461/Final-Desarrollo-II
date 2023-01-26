@@ -20,6 +20,8 @@ public class SaveAndLoadHighScore : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(filePath);
+
         if (File.Exists(filePath))
         {
             highScoreTable = ReadHighScore();
