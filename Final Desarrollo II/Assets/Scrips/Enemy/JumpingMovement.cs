@@ -30,8 +30,7 @@ public class JumpingMovement : MonoBehaviour, MovementType
 
     public void Move()
     {
-        Debug.Log(IsGrounded());
-
+        if (IsGrounded())
         if (IsGrounded())
         {
             //   RB.AddForce(Vector3.up * velocity );

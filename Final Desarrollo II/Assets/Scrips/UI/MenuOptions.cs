@@ -16,6 +16,11 @@ public class MenuOptions : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void GoToGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
     public void ExitGame()
     {
 

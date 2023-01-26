@@ -4,9 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
+    public UnityEvent finishTime;
+
     [SerializeField] TextMeshProUGUI timer;
     [SerializeField] float initialValueTimer;
     float currentTime;
@@ -23,6 +26,10 @@ public class Timer : MonoBehaviour
         {
             currentTime -= Time.deltaTime;
             timer.text = "" + currentTime.ToString("f1");
+        }
+        else
+        {
+            finishTime.Invoke();
         }
 
 
