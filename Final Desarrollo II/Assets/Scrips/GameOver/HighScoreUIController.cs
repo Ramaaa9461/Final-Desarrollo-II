@@ -9,21 +9,10 @@ public class HighScoreUIController : MonoBehaviour
     [SerializeField] TextMeshProUGUI score2;
     [SerializeField] TextMeshProUGUI score3;
 
-    private void Start()
+    public void RecibeHighScoreValues(HighScoreTable highScore)
     {
-        //Cargar son el save and load
-    }
-
-    public void setScore1(int score)
-    {
-        score1.text = score.ToString(); 
-    }
-    public void setScore2(int score)
-    {
-        score2.text = score.ToString();
-    }
-    public void setScore3(int score)
-    {
-        score3.text = score.ToString();
+        score1.text = "" + highScore.score1.ToString();
+        score2.text = "" + highScore.score2.ToString();
+        score3.text = "" + highScore.score3.ToString();
     }
 }

@@ -4,52 +4,42 @@ using UnityEngine;
 
 public class SetHighScore : MonoBehaviour
 {
-    int[] highScores;
     int lastScore;
+    SaveAndLoadHighScore saveAndLoadHighScore;
+    HighScoreTable highScoreTable;
+    HighScoreUIController highScoreUIController;
 
     private void Awake()
     {
-        highScores = new int[3];
+        saveAndLoadHighScore = gameObject.GetComponent<SaveAndLoadHighScore>();
+        highScoreUIController = gameObject.GetComponent<HighScoreUIController>();
     }
 
     private void Start()
     {
         lastScore = PlayerPrefs.GetInt("EnemiesKilled");
+        highScoreTable = saveAndLoadHighScore.getHighScoreTable();
 
-        //tengo qe leer el archivo y llenar el array
-    }
+        int[] array = new int[] { highScoreTable.score1, highScoreTable.score2, highScoreTable.score3, lastScore };
 
+        for (int i = 0; i < array.Length; i++)
+        {
+            for (int j = 0; j < array.Length - 1; j++)
+            {
+                if (array[j] > array[j + 1])
+                {
+                    int aux = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = aux;
+                }
+            }
+        }
 
+        highScoreTable.score1 = array[0];
+        highScoreTable.score2 = array[1];
+        highScoreTable.score3 = array[2];
 
-    public void setScore1(int score)
-    {
-        highScores[0] = score;
-    }
-
-    public void setScore2(int score)
-    {
-        highScores[1] = score;
-    }
-
-    public void setScore3(int score)
-    {
-        highScores[2] = score;
-    }
-
-
-
-    public int getScore1()
-    {
-        return highScores[0];
-    }
-
-    public int getScore2()
-    {
-        return highScores[1];
-    }
-
-    public int getScore3()
-    {
-        return highScores[2];
+        saveAndLoadHighScore.setHighScoreTable(highScoreTable);
+        highScoreUIController.RecibeHighScoreValues(highScoreTable);
     }
 }

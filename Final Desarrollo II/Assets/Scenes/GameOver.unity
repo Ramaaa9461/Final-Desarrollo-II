@@ -2139,6 +2139,9 @@ GameObject:
   - component: {fileID: 2134184187}
   - component: {fileID: 2134184189}
   - component: {fileID: 2134184188}
+  - component: {fileID: 2134184191}
+  - component: {fileID: 2134184190}
+  - component: {fileID: 2134184192}
   m_Layer: 5
   m_Name: PanelHighScore
   m_TagString: Untagged
@@ -2212,3 +2215,42 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134184186}
   m_CullTransparentMesh: 1
+--- !u!114 &2134184190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134184186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af877bc2a8ba1c24e847e3b88e6085ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2134184191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134184186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51bb8f58c5cc9b04bb19fb6c2c241c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score1: {fileID: 0}
+  score2: {fileID: 0}
+  score3: {fileID: 0}
+--- !u!114 &2134184192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134184186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4972648e1d5fc47499c775068be56382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
