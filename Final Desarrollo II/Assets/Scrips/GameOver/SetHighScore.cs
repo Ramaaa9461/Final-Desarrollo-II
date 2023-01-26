@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighScoreController : MonoBehaviour
+public class SetHighScore : MonoBehaviour
 {
     int[] highScores;
     int lastScore;
