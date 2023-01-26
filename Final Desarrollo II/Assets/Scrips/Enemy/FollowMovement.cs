@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowMovement : MonoBehaviour, MovementType
 {
-    [SerializeField] SphereConfiguration sphereConfiguration;
+    SphereConfiguration sphereConfiguration;
     GameObject player;
     Rigidbody RB;
 
@@ -14,6 +14,7 @@ public class FollowMovement : MonoBehaviour, MovementType
     void Awake()
     {
         RB = gameObject.GetComponent<Rigidbody>();
+        sphereConfiguration = gameObject.GetComponent<EnemyBehaviour>().sphereConfiguration;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 

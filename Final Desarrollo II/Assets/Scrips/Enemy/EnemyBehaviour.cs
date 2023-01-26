@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    public SphereConfiguration sphereConfiguration;
     private MovementType movementType;
 
     void Awake()

@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuOptions : MonoBehaviour
 {
-
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void GoToGameplay()
     {
         SceneManager.LoadScene("Gameplay");

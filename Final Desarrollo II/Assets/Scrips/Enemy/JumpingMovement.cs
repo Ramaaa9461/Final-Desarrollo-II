@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpingMovement : MonoBehaviour, MovementType
 {
-    [SerializeField] SphereConfiguration sphereConfiguration;
+    SphereConfiguration sphereConfiguration;
     Rigidbody RB;
 
     float distToGround;
@@ -13,6 +13,7 @@ public class JumpingMovement : MonoBehaviour, MovementType
     void Awake()
     {
         RB = gameObject.GetComponent<Rigidbody>();
+        sphereConfiguration = gameObject.GetComponent<EnemyBehaviour>().sphereConfiguration;
     }
 
     private void Start()
