@@ -1,1 +1,9 @@
-Programado por ramiro guzman
+Programmer: Ramiro Guzman
+
+ASSETS
+
+GAMEPLAY MUSIC, tcarisland: https://opengameart.org/content/menu-1
+MENU MUSIC, mrpoly: https://opengameart.org/content/menu-music
+SMILE JUMP EFFECT, KobatoGames: https://opengameart.org/content/slime-jump-effect
+CRASH COLLISION, qubodup: https://opengameart.org/content/crash-collision
+KILL SOUND, remaxim: https://opengameart.org/content/bad-sound-2
