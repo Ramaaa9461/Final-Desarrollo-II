@@ -37,5 +37,14 @@ public class MenuOptions : MonoBehaviour
 
     }
 
+    public void PauseGame()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
+    }
 
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
 }
