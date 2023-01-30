@@ -1,0 +1,9 @@
+Flechas arriba-abajo o W-S: avanza-retrocede el tanque.
+
+Flechas izquierda-derecha o A-D: gira el tanque en el lugar.
+
+Mouse Horizontal: Mueve la camara segun se mueva el mouse.
+
+Click Izquierdo: Mueve la torreta del tanque hacia donde mira la camara y dispara.
+
+Tecla P: Abre el menu de Pausa
