@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - sphereConfiguration: {fileID: 11400000, guid: 97b44087ff6477b46b3277f04d12c0b6, type: 2}
+  - jumpSound: {fileID: 8300000, guid: 734b2fba336fea646a2002ecfc752075, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class JumpingMovement : MonoBehaviour, MovementType
 {
+    [SerializeField] AudioClip jumpSound;
+    AudioSource audioSource;
+
     SphereConfiguration sphereConfiguration;
     Rigidbody RB;
+
+
 
     float distToGround;
     float velocity = 5;
@@ -14,6 +19,7 @@ public class JumpingMovement : MonoBehaviour, MovementType
     {
         RB = gameObject.GetComponent<Rigidbody>();
         sphereConfiguration = gameObject.GetComponent<EnemyBehaviour>().sphereConfiguration;
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -32,10 +38,10 @@ public class JumpingMovement : MonoBehaviour, MovementType
     public void Move()
     {
         if (IsGrounded())
-        if (IsGrounded())
         {
             //   RB.AddForce(Vector3.up * velocity );
             RB.velocity = new Vector3(0, velocity,0);
+            audioSource.Play();
         }
     }
 }

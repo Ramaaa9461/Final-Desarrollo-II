@@ -292,12 +292,12 @@ GameObject:
   - component: {fileID: 40179232}
   - component: {fileID: 40179231}
   m_Layer: 5
-  m_Name: Pause
+  m_Name: PauseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &40179230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -474,7 +474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 257.2, y: -382.9583}
+  m_AnchoredPosition: {x: 255.59999, y: -382.9583}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116070663
@@ -1201,7 +1201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 257.2, y: -76.59166}
+  m_AnchoredPosition: {x: 255.59999, y: -76.59166}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &524265590
@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 527401924}
   - component: {fileID: 527401923}
   m_Layer: 5
-  m_Name: PanelButtons
+  m_Name: PanelPause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1919,7 +1919,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 257.2, y: -229.77498}
+  m_AnchoredPosition: {x: 255.59999, y: -229.77498}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707775980
@@ -2954,12 +2954,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e46a510713eb364287f33b776386d01, type: 3}
+  m_Script: {fileID: 11500000, guid: 28fc6dec550c90440924c5e5ebb7bcc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionPanel: {fileID: 1352607014}
-  insctructionsText: {fileID: 897715934}
-  insctructionsTextAsset: {fileID: 4900000, guid: 881ecf8a15d6de645bbb32a9cd854f60, type: 3}
+  InstructionsPanel: {fileID: 1352607014}
+  InstructionsText: {fileID: 897715934}
+  InstructionsTextAsset: {fileID: 4900000, guid: be405629b1f79a34680bad93bb9bec55, type: 3}
+  PausePanel: {fileID: 527401921}
   pauseButton: {fileID: 40179231}
 --- !u!1 &1080874700
 GameObject:

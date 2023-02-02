@@ -46,5 +46,6 @@ public class MenuOptions : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
