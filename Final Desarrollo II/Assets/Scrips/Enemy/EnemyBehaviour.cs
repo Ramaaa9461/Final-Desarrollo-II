@@ -6,19 +6,30 @@ namespace Game
 
     public class EnemyBehaviour : MonoBehaviour
     {
+        [SerializeField] AudioClip jumpSound;
+        [SerializeField] AudioClip slidingSound;
+
+
         public SphereConfiguration sphereConfiguration;
         private MovementType movementType;
+        AudioSource audioSource;
 
-        void Awake()
+
+        private void Awake()
         {
-            if (Random.Range(0, 2) == 0)
+            audioSource = gameObject.GetComponent<AudioSource>();
+        }
+        void Start()
+        {
+            if (gameObject.GetComponent<JumpingMovement>())
             {
-                movementType = gameObject.AddComponent<FollowMovement>();
+                audioSource.clip = jumpSound;
             }
             else
             {
-                movementType = gameObject.AddComponent<JumpingMovement>();
+                audioSource.clip = slidingSound;
             }
+            
         }
 
         void Update()
