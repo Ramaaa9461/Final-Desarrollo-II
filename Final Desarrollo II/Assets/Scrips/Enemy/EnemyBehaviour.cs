@@ -1,31 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
+
+namespace Game
 {
-    public SphereConfiguration sphereConfiguration;
-    private MovementType movementType;
 
-    void Awake()
+    public class EnemyBehaviour : MonoBehaviour
     {
-        if (Random.Range(0, 2) == 0)
+        public SphereConfiguration sphereConfiguration;
+        private MovementType movementType;
+
+        void Awake()
         {
-            movementType = gameObject.AddComponent<FollowMovement>();
+            if (Random.Range(0, 2) == 0)
+            {
+                movementType = gameObject.AddComponent<FollowMovement>();
+            }
+            else
+            {
+                movementType = gameObject.AddComponent<JumpingMovement>();
+            }
         }
-        else
+
+        void Update()
         {
-            movementType = gameObject.AddComponent<JumpingMovement>();
+            movementType.Move();
         }
-    }
 
-    void Update()
-    {
-        movementType.Move();
-    }
-
-    public void setMovementType(MovementType MT)
-    {
-        movementType = MT;
+        public void setMovementType(MovementType MT)
+        {
+            movementType = MT;
+        }
     }
 }

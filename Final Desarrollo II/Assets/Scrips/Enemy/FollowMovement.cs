@@ -1,32 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowMovement : MonoBehaviour, MovementType
+namespace Game
 {
-    SphereConfiguration sphereConfiguration;
-    GameObject player;
-    Rigidbody RB;
-
-    Vector3 direction;
-    float velocity = 20;
-
-    void Awake()
+    public class FollowMovement : MonoBehaviour, MovementType
     {
-        RB = gameObject.GetComponent<Rigidbody>();
-        sphereConfiguration = gameObject.GetComponent<EnemyBehaviour>().sphereConfiguration;
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
+        SphereConfiguration sphereConfiguration;
+        GameObject player;
+        Rigidbody RB;
 
-    private void Start()
-    {
-        velocity = sphereConfiguration.velocity;
-    }
+        Vector3 direction;
+        float velocity = 20;
 
-    public void Move()
-    {
-        direction = player.transform.position - transform.position;
+        void Awake()
+        {
+            RB = gameObject.GetComponent<Rigidbody>();
+            sphereConfiguration = gameObject.GetComponent<EnemyBehaviour>().sphereConfiguration;
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
 
-        RB.AddForce(direction * velocity * Time.deltaTime);
+        private void Start()
+        {
+            velocity = sphereConfiguration.velocity;
+        }
+
+        public void Move()
+        {
+            direction = player.transform.position - transform.position;
+
+            RB.AddForce(direction * velocity * Time.deltaTime);
+        }
     }
 }

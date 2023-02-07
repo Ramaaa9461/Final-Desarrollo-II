@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public interface MovementType
+namespace Game
 {
-    void Move();
+    public interface MovementType
+    {
+        void Move();
+    }
 }

@@ -1,43 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveAndLoadAudio : MonoBehaviour
+namespace Game
 {
-    string musicVolumePath = "MusicVolume";
-    string sfxVolumePath = "SfxVolume";
-    string isMutePath = "isMute";
 
-
-    public void SaveMusicVolume(float volume)
+    public class SaveAndLoadAudio : MonoBehaviour
     {
-        PlayerPrefs.SetFloat(musicVolumePath, volume);
-    }
-
-    public void SaveSfxVolume(float volume)
-    {
-        PlayerPrefs.SetFloat(sfxVolumePath, volume);
-    }
-
-    public void SaveIsMute(bool mute)
-    {
-        PlayerPrefs.SetInt(isMutePath, (mute ? 1 : 0));
-    }
+        string musicVolumePath = "MusicVolume";
+        string sfxVolumePath = "SfxVolume";
+        string isMutePath = "isMute";
 
 
+        public void SaveMusicVolume(float volume)
+        {
+            PlayerPrefs.SetFloat(musicVolumePath, volume);
+        }
 
-    public float LoadMusicVolume()
-    {
-        return PlayerPrefs.GetFloat(musicVolumePath);
-    }
+        public void SaveSfxVolume(float volume)
+        {
+            PlayerPrefs.SetFloat(sfxVolumePath, volume);
+        }
 
-    public float LoadSfxVolume()
-    {
-        return PlayerPrefs.GetFloat(sfxVolumePath);
-    }
+        public void SaveIsMute(bool mute)
+        {
+            PlayerPrefs.SetInt(isMutePath, (mute ? 1 : 0));
+        }
 
-    public bool LoadIsMute()
-    {
-        return (PlayerPrefs.GetInt(isMutePath) != 0);
+
+
+        public float LoadMusicVolume()
+        {
+            return PlayerPrefs.GetFloat(musicVolumePath);
+        }
+
+        public float LoadSfxVolume()
+        {
+            return PlayerPrefs.GetFloat(sfxVolumePath);
+        }
+
+        public bool LoadIsMute()
+        {
+            return (PlayerPrefs.GetInt(isMutePath) != 0);
+        }
     }
 }

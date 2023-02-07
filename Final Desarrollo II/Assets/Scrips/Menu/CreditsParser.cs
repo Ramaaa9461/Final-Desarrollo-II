@@ -1,22 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CreditsParser : MonoBehaviour
+
+namespace Game
 {
-
-   [SerializeField] TextAsset creditsTextAsset;
-   [SerializeField] TextMeshProUGUI cretitsText;
-
-    private void Start()
+    public class CreditsParser : MonoBehaviour
     {
-        cretitsText.text = creditsTextAsset.text;
 
+        [SerializeField] TextAsset creditsTextAsset;
+        [SerializeField] TextMeshProUGUI cretitsText;
 
+        private void Start()
+        {
+            cretitsText.text = creditsTextAsset.text;
+        }
     }
-
-
-
-
 }

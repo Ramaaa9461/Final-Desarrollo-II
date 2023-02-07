@@ -1,40 +1,41 @@
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Timer : MonoBehaviour
+
+namespace Game
 {
-    public UnityEvent finishTime;
 
-    [SerializeField] TextMeshProUGUI timer;
-    [SerializeField] float initialValueTimer;
-    float currentTime;
-    void Start()
+    public class Timer : MonoBehaviour
     {
-        currentTime = initialValueTimer;
-        timer.text = "" + currentTime.ToString("f1");
+        public UnityEvent finishTime;
 
-    }
-
-    void Update()
-    {
-        if (currentTime > 0)
+        [SerializeField] TextMeshProUGUI timer;
+        [SerializeField] float initialValueTimer;
+        float currentTime;
+        void Start()
         {
-            currentTime -= Time.deltaTime;
+            currentTime = initialValueTimer;
             timer.text = "" + currentTime.ToString("f1");
+
         }
-        else
+
+        void Update()
         {
-            finishTime.Invoke();
+            if (currentTime > 0)
+            {
+                currentTime -= Time.deltaTime;
+                timer.text = "" + currentTime.ToString("f1");
+            }
+            else
+            {
+                finishTime.Invoke();
+            }
+
+
         }
 
 
     }
-
-
-
 }

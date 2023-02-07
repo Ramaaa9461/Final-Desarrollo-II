@@ -1,33 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class bulletBehaviour : MonoBehaviour
+
+namespace Game
 {
-    [SerializeField] float velocity;
-   public UnityEvent enemyEliminated;
 
-    private void Start()
+    public class bulletBehaviour : MonoBehaviour
     {
-        enemyEliminated.AddListener(GameObject.FindObjectOfType<DeadEnemiesAccountant>().addToDeadEnemiesAccountant);
-        Destroy(gameObject, 5.0f);
-    }
+        [SerializeField] float velocity;
+        public UnityEvent enemyEliminated;
 
-    void Update()
-    {
-        transform.position += transform.forward * velocity * Time.deltaTime;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
+        private void Start()
         {
-            //Intancias particulas
-            Destroy(collision.gameObject);
-            enemyEliminated.Invoke();
+            enemyEliminated.AddListener(GameObject.FindObjectOfType<DeadEnemiesAccountant>().addToDeadEnemiesAccountant);
+            Destroy(gameObject, 5.0f);
         }
 
-        Destroy(gameObject);
+        void Update()
+        {
+            transform.position += transform.forward * velocity * Time.deltaTime;
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                //Intancias particulas
+                Destroy(collision.gameObject);
+                enemyEliminated.Invoke();
+            }
+
+            Destroy(gameObject);
+        }
     }
 }

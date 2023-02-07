@@ -1,66 +1,70 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetVolume : MonoBehaviour
+
+namespace Game
 {
-    [SerializeField] List<AudioSource> musicList;
-    [SerializeField] List<AudioSource> sfxList;
 
-    SaveAndLoadAudio saveAndLoadAudio;
-    private void Awake()
+    public class SetVolume : MonoBehaviour
     {
-        saveAndLoadAudio = gameObject.GetComponent<SaveAndLoadAudio>();
+        [SerializeField] List<AudioSource> musicList;
+        [SerializeField] List<AudioSource> sfxList;
 
-        AudioSource[] audioSource;
-
-        audioSource = GameObject.FindObjectsOfType<AudioSource>();
-
-
-        for (int i = 0; i < audioSource.Length; i++)
+        SaveAndLoadAudio saveAndLoadAudio;
+        private void Awake()
         {
-            if (audioSource[i].loop)
+            saveAndLoadAudio = gameObject.GetComponent<SaveAndLoadAudio>();
+
+            AudioSource[] audioSource;
+
+            audioSource = GameObject.FindObjectsOfType<AudioSource>();
+
+
+            for (int i = 0; i < audioSource.Length; i++)
             {
-                musicList.Add(audioSource[i]);
+                if (audioSource[i].loop)
+                {
+                    musicList.Add(audioSource[i]);
+                }
+                else
+                {
+                    sfxList.Add(audioSource[i]);
+                }
             }
-            else
+
+            //setMusicVolume(saveAndLoadAudio.LoadMusicVolume()); //Lo setea el UIController para evitar leer innesariamente datos del disco
+            //setSfxVolume  (saveAndLoadAudio.LoadSfxVolume());
+            //setAllAudiosInMute(saveAndLoadAudio.LoadIsMute());
+        }
+
+        public void setMusicVolume(float volume)
+        {
+            foreach (AudioSource AS in musicList)
             {
-                sfxList.Add(audioSource[i]);
+                AS.volume = volume;
+
             }
         }
 
-        //setMusicVolume(saveAndLoadAudio.LoadMusicVolume()); //Lo setea el UIController para evitar leer innesariamente datos del disco
-        //setSfxVolume  (saveAndLoadAudio.LoadSfxVolume());
-        //setAllAudiosInMute(saveAndLoadAudio.LoadIsMute());
-    }
-
-    public void setMusicVolume(float volume)
-    {
-        foreach (AudioSource AS in musicList)
+        public void setSfxVolume(float volume)
         {
-            AS.volume = volume;
-
-        }
-    }
-
-    public void setSfxVolume(float volume)
-    {
-        foreach (AudioSource AS in sfxList)
-        {
-            AS.volume = volume;
-        }
-    }
-
-    public void setAllAudiosInMute(bool isMute)
-    {
-        foreach (AudioSource AS in musicList)
-        {
-            AS.mute = isMute;
+            foreach (AudioSource AS in sfxList)
+            {
+                AS.volume = volume;
+            }
         }
 
-        foreach (AudioSource AS in sfxList)
+        public void setAllAudiosInMute(bool isMute)
         {
-            AS.mute = isMute;
+            foreach (AudioSource AS in musicList)
+            {
+                AS.mute = isMute;
+            }
+
+            foreach (AudioSource AS in sfxList)
+            {
+                AS.mute = isMute;
+            }
         }
     }
 }
