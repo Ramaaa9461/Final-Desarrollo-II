@@ -6,13 +6,10 @@ namespace Game
 
     public class JumpingMovement : MonoBehaviour, MovementType
     {
-        [SerializeField] AudioClip jumpSound;
         AudioSource audioSource;
 
         SphereConfiguration sphereConfiguration;
         Rigidbody RB;
-
-
 
         float distToGround;
         float velocity = 5;

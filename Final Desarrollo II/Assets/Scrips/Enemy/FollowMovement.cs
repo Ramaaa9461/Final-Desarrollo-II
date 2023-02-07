@@ -4,6 +4,8 @@ namespace Game
 {
     public class FollowMovement : MonoBehaviour, MovementType
     {
+        AudioSource audioSource;
+
         SphereConfiguration sphereConfiguration;
         GameObject player;
         Rigidbody RB;
@@ -16,6 +18,8 @@ namespace Game
             RB = gameObject.GetComponent<Rigidbody>();
             sphereConfiguration = gameObject.GetComponent<EnemyBehaviour>().sphereConfiguration;
             player = GameObject.FindGameObjectWithTag("Player");
+            audioSource = gameObject.GetComponent<AudioSource>();
+
         }
 
         private void Start()
@@ -28,6 +32,11 @@ namespace Game
             direction = player.transform.position - transform.position;
 
             RB.AddForce(direction * velocity * Time.deltaTime);
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
     }
 }

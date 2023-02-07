@@ -63,6 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a41883dcca459c40be6dad13eb0e778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSound: {fileID: 8300000, guid: 734b2fba336fea646a2002ecfc752075, type: 3}
+  slidingSound: {fileID: 8300000, guid: 7f560de975931d34788569dbc8431c00, type: 3}
   sphereConfiguration: {fileID: 11400000, guid: 97b44087ff6477b46b3277f04d12c0b6, type: 2}
 --- !u!82 &5538064507576949237
 AudioSource:
