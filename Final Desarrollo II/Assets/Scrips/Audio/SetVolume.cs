@@ -66,5 +66,23 @@ namespace Game
                 AS.mute = isMute;
             }
         }
+
+        private void Update()
+        {
+
+            AudioSource AStoRemove = null;
+
+            foreach (AudioSource AS in sfxList)
+            {
+                if (AS == null)
+                {
+                    AStoRemove = AS;
+                }
+            }
+            sfxList.Remove(AStoRemove);
+
+        }
+
+
     }
 }

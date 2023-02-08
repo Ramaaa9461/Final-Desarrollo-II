@@ -26,7 +26,7 @@ namespace Game
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 //Intancias particulas
-                Destroy(collision.gameObject);
+                collision.gameObject.SetActive(false);
                 enemyEliminated.Invoke();
             }
 

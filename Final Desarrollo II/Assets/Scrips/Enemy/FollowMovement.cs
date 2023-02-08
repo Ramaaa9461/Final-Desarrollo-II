@@ -33,9 +33,12 @@ namespace Game
 
             RB.AddForce(direction * velocity * Time.deltaTime);
 
-            if (!audioSource.isPlaying)
+            if (Time.timeScale == 1)
             {
-                audioSource.Play();
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
             }
         }
     }

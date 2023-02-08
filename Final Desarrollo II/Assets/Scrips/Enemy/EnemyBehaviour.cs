@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
@@ -42,10 +42,14 @@ namespace Game
             movementType = MT;
         }
 
-
-        private void OnDestroy()
+        private void OnDisable()
         {
-            Instantiate(sphereDeadSoundPrefab);
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Gameplay"))
+            {
+                Instantiate(sphereDeadSoundPrefab);
+                Destroy(gameObject);
+            }
         }
+
     }
 }
