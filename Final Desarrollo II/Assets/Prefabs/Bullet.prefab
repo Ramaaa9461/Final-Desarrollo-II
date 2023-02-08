@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf292f5b85e5154aab75148ee0f5c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 10
+  velocity: 25
   enemyEliminated:
     m_PersistentCalls:
       m_Calls:

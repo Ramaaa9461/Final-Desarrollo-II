@@ -6,13 +6,14 @@ namespace Game
 
     public class EnemyBehaviour : MonoBehaviour
     {
-        [SerializeField] AudioClip jumpSound;
-        [SerializeField] AudioClip slidingSound;
-
-
         public SphereConfiguration sphereConfiguration;
         private MovementType movementType;
+
         AudioSource audioSource;
+        [SerializeField] AudioClip jumpSound;
+        [SerializeField] AudioClip slidingSound;
+        [SerializeField] GameObject sphereDeadSoundPrefab;
+
 
 
         private void Awake()
@@ -29,7 +30,6 @@ namespace Game
             {
                 audioSource.clip = slidingSound;
             }
-            
         }
 
         void Update()
@@ -40,6 +40,12 @@ namespace Game
         public void setMovementType(MovementType MT)
         {
             movementType = MT;
+        }
+
+
+        private void OnDestroy()
+        {
+            Instantiate(sphereDeadSoundPrefab);
         }
     }
 }
