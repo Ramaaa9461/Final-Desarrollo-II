@@ -6,6 +6,6 @@ Mouse Horizontal: Mueve la camara segun se mueva el mouse.
 
 Click Izquierdo: Mueve la torreta del tanque hacia donde mira la camara y dispara.
 
-Reuda del Mouse: Aumentas o retrasas el zoom de la camara
+Reuda del Mouse: Aumentas o reduces el zoom de la camara
 
 Tecla P: Abre el menu de Pausa.
