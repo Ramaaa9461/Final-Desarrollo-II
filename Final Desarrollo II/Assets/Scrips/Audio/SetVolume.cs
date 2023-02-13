@@ -67,20 +67,9 @@ namespace Game
             }
         }
 
-        private void Update()
+        public void RemoveAudioSource(AudioSource audioSourceToRemove)
         {
-
-            AudioSource AStoRemove = null;
-
-            foreach (AudioSource AS in sfxList)
-            {
-                if (AS == null)
-                {
-                    AStoRemove = AS;
-                }
-            }
-            sfxList.Remove(AStoRemove);
-
+            sfxList.Remove(audioSourceToRemove);
         }
 
 

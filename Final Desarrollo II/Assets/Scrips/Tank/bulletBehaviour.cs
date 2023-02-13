@@ -26,7 +26,7 @@ namespace Game
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 //Intancias particulas
-                collision.gameObject.SetActive(false);
+                collision.gameObject.GetComponent<EnemyBehaviour>().ActiveDeadSound();
                 enemyEliminated.Invoke();
             }
 

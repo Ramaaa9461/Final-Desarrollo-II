@@ -67,6 +67,9 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 734b2fba336fea646a2002ecfc752075, type: 3}
   slidingSound: {fileID: 8300000, guid: 7f560de975931d34788569dbc8431c00, type: 3}
   sphereDeadSoundPrefab: {fileID: 6822029170959528760, guid: f5bf4e6f5f1e6cc4aa501b574bf6045e, type: 3}
+  removeAudioSource:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &5538064507576949237
 AudioSource:
   m_ObjectHideFlags: 0
@@ -225,7 +228,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5ab68f8b07318554bae66744938f2f52, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

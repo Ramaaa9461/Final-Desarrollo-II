@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace Game
@@ -14,11 +15,12 @@ namespace Game
         [SerializeField] AudioClip slidingSound;
         [SerializeField] GameObject sphereDeadSoundPrefab;
 
-
+        public UnityEvent<AudioSource> removeAudioSource;
 
         private void Awake()
         {
             audioSource = gameObject.GetComponent<AudioSource>();
+            removeAudioSource.AddListener(GameObject.FindObjectOfType<SetVolume>().RemoveAudioSource);
         }
         void Start()
         {
@@ -42,13 +44,12 @@ namespace Game
             movementType = MT;
         }
 
-        private void OnDisable()
+
+        public void ActiveDeadSound()
         {
-            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Gameplay"))
-            {
-                Instantiate(sphereDeadSoundPrefab);
-                Destroy(gameObject);
-            }
+            Instantiate(sphereDeadSoundPrefab);
+            removeAudioSource.Invoke(audioSource);
+            Destroy(gameObject);
         }
 
     }
