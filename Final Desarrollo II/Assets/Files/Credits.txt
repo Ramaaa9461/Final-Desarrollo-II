@@ -7,3 +7,4 @@ MENU MUSIC, mrpoly: https://opengameart.org/content/menu-music
 SMILE JUMP EFFECT, KobatoGames: https://opengameart.org/content/slime-jump-effect
 CRASH COLLISION, qubodup: https://opengameart.org/content/crash-collision
 KILL SOUND, remaxim: https://opengameart.org/content/bad-sound-2
+SLIDING STONE, Leonardo Villegas: Image Campus student
