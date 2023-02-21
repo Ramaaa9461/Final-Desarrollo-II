@@ -25,7 +25,7 @@ namespace Game
 
         void Awake()
         {
-            angle = new Vector2(90 * Mathf.Deg2Rad, 0);
+            angle = new Vector2(-90 * Mathf.Deg2Rad, 0);
             camera = GetComponent<Camera>();
         }
 

@@ -2566,7 +2566,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
   - component: {fileID: 963194231}
@@ -2577,14 +2576,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -2636,7 +2627,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.2164396, y: 0, z: 0, w: 0.97629607}
-  m_LocalPosition: {x: 0, y: 20, z: 0}
+  m_LocalPosition: {x: 0, y: 1.88, z: 3.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3480,8 +3471,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1741487348}
   enemyPrefab: {fileID: 3546979950178861034, guid: 3b11ea3930938854d89919d1f5638781, type: 3}
-  numberOfEnemies: 10
-  circleRadius: 20
+  numberOfEnemies: 50
+  circleRadius: 30
 --- !u!4 &1483164899
 Transform:
   m_ObjectHideFlags: 0
@@ -4129,7 +4120,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.3
+  m_fontSize: 64.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4324,8 +4315,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1862519845}
   - component: {fileID: 1862519848}
-  - component: {fileID: 1862519847}
   - component: {fileID: 1862519846}
+  - component: {fileID: 1862519847}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -4393,7 +4384,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   timer: {fileID: 1862519847}
-  initialValueTimer: 20
+  initialValueTimer: 40
 --- !u!114 &1862519847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4441,7 +4432,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.3
+  m_fontSize: 64.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
